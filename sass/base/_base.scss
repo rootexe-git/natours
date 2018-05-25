@@ -1,0 +1,49 @@
+ 
+
+/* Global Reset */
+*, 
+*::after, 
+*::before{
+    margin:0px;
+    padding:0px;
+    box-sizing: inherit; /*makes it inheritable*/
+}
+
+html{
+    /* to change all px to rem 10px makes calculation very easy*/
+    /* font-size: 10px; */
+    
+    /* We use percentage incase the user has default value changed of the browser font size */
+    font-size: 62.5%; /*10px of 16px == 62.5*/
+
+    // @include respond-phone{
+    //     font-size: 50%;
+    // }
+
+    
+    
+    
+    @include respond(tab-landscape){
+        font-size: 56.25%;
+    }
+    @include respond(tab-portrait){
+        font-size: 50%;
+    }
+    @include respond(phone){
+        font-size: 40%;
+    }
+    
+    @include respond(big-desktop){
+        font-size: 75%;
+    }
+
+}   
+
+body{
+    box-sizing: border-box; /*size is calculated including padding & border*/
+    padding: 3rem;
+    @include respond(tab-portrait){
+        padding: 0;
+    }
+
+}
